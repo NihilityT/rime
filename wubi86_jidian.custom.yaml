@@ -10,3 +10,8 @@ patch:
   punctuator/full_shape/\: 、
   punctuator/half_shape/\: 、
   translator/comment_format:
+  engine/filters/+:
+    - lua_filter@single_char_filter
+  switches/+:
+    - name: single_char_mode
+      states: [ 词组, 单字 ]
