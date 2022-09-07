@@ -4,6 +4,19 @@ function output(input)
     end
 end
 
+--- 过滤器：单字
+function single_char_filter(input, env)
+    if (env.engine.context:get_option("single_char_mode")) then
+        for cand in input:iter() do
+            if (utf8.len(cand.text) == 1) then
+                yield(cand)
+            end
+        end
+    else
+        output(input)
+    end
+end
+
 --- 过滤器：单字在先
 function single_char_first_filter(input)
     local l = {}
