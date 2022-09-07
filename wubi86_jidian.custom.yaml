@@ -1,0 +1,12 @@
+# Rime schema settings
+# encoding: utf-8
+
+patch:
+  speller/auto_select: true
+  speller/max_code_length: 4
+  key_binder/bindings/+:
+    - { when: has_menu, accept: semicolon, send: 2 }
+    - { when: has_menu, accept: apostrophe, send: 3 }
+  punctuator/full_shape/\: 、
+  punctuator/half_shape/\: 、
+  translator/comment_format:
