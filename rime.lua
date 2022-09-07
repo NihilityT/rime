@@ -1,3 +1,9 @@
+function output(input)
+    for cand in input:iter() do
+        yield(cand)
+    end
+end
+
 --- 过滤器：单字在先
 function single_char_first_filter(input)
     local l = {}
