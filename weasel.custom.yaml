@@ -1,0 +1,9 @@
+customization:
+  distribution_code_name: Weasel
+  distribution_version: 0.14.3_dev_0.8
+  generator: "Weasel::UIStyleSettings"
+  modified_time: "Mon Sep  5 16:09:19 2022"
+  rime_version: 1.7.3
+patch:
+  "app_options/gvim.exe/ascii_mode": true
+  "style/color_scheme": dark_temple
