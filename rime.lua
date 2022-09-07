@@ -8,7 +8,7 @@ function single_char_first_filter(input)
             table.insert(l, cand)
         end
     end
-    for cand in ipairs(l) do
+    for i, cand in ipairs(l) do
         yield(cand)
     end
 end
