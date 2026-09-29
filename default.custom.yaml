@@ -9,7 +9,6 @@ patch:
   schema_list:
     - schema: wubi86_jidian
     - schema: double_pinyin_flypy
-    - schema: numbers
     - schema: luna_pinyin
     - schema: luna_pinyin_fluency
 
