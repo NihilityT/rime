@@ -1,0 +1,12 @@
+# 为五笔反查编译袖珍简化字拼音的小鹤双拼索引。
+schema:
+  schema_id: wubi86_jidian_flypy
+  name: 小鹤双拼反查
+
+speller:
+  algebra:
+    __include: double_pinyin_flypy.schema:/speller/algebra
+
+translator:
+  dictionary: pinyin_simp
+  prism: wubi86_jidian_flypy

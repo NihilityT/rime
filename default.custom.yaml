@@ -45,3 +45,4 @@ patch:
   switcher/option_list_separator: "｜"
   switcher/save_options/+:
       - single_char_mode
+      - full_pinyin_reverse_lookup

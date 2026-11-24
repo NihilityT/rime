@@ -65,7 +65,7 @@ end
 
 local function show(list) return "[" .. table.concat(list or {}, "] [") .. "]" end
 
-local keys = { "date", "time", "week", "gggg", "a", "gg" }
+local keys = { "date", "time", "week", "gggg", "a", "gg", "znihao", "znihc" }
 
 -- 部署与 lua 加载 --------------------------------------------------------
 local normal, err, ok = run("wubi86_jidian", { single_char_mode = false }, keys)
@@ -91,6 +91,11 @@ for _, k in ipairs({ "a", "gg" }) do
 end
 check("单字模式开：date 仍出日期", contains(single.date, os.date("%Y-%m-%d")), show(single.date))
 check("单字模式开：time 仍出时间", contains(single.time, os.date("%H:%M")), show(single.time))
+
+-- 全拼和小鹤共用 z 前缀，按开关选择其一。
+local full_pinyin, full_pinyin_err, full_pinyin_ok = run("wubi86_jidian", { full_pinyin_reverse_lookup = true }, { "znihao", "znihc" })
+check("默认使用小鹤双拼反查", contains(normal.znihc, "你好") and not contains(normal.znihao, "你好"))
+check("切换到全拼反查", full_pinyin_ok and contains(full_pinyin.znihao, "你好") and not contains(full_pinyin.znihc, "你好"), full_pinyin_err)
 
 sh("rm -rf " .. q(work))
 print(("\n%d passed, %d failed"):format(passed, failed))
